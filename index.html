@@ -621,5 +621,28 @@ document.getElementById("copyPlan").addEventListener("click", async () => {
 <script>
 const ASIR_LENS_API = "https://lively-leaf-1907.galmudhi.workers.dev";
 </script>
+  <section id="asir-search" style="padding:30px;text-align:center">
+  <h2>اكتشفي عسير بذكاء 🌿</h2>
+  <p>وش ودك تكتشفين في عسير؟</p>
+  <input id="asir-query" placeholder="مثال: مقهى في السودة"
+    style="padding:12px;width:70%;max-width:400px">
+  <button onclick="searchAsir()" style="padding:12px">ابحثي</button>
+  <p id="asir-result"></p>
+</section>
+<script>
+async function searchAsir() {
+  const result = document.getElementById("asir-result");
+  result.textContent = "جاري الاتصال...";
+  try {
+    const response = await fetch(
+      "https://lively-leaf-1907.galmudhi.workers.dev"
+    );
+    const data = await response.json();
+    result.textContent = data.message;
+  } catch {
+    result.textContent = "تعذر الاتصال، حاولي مرة أخرى.";
+  }
+}
+</script>
 </body>
 </html>
