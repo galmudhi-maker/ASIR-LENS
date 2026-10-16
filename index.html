@@ -356,6 +356,267 @@ document.getElementById("exploreButton").addEventListener("click", () => {
     results.append(card);
   });
 });
+  
+const demoExperiences = [
+  {
+    name: "تجربة شاي بإطلالة جبلية",
+    area: "soudah",
+    areaName: "السودة",
+    type: "tea",
+    typeName: "شاي ومقاهٍ",
+    budget: "1",
+    mood: ["morning", "sunset"],
+    description: "مثال تجريبي لتجربة شاي مع إطلالة على الجبال.",
+    bestTime: "الصباح أو الغروب حسب الطقس وساعات المكان",
+    tags: "شاي إطلالة جبال طبيعة"
+  },
+  {
+    name: "تجربة مطعم إيطالي",
+    area: "abha",
+    areaName: "أبها",
+    type: "italian",
+    typeName: "مطاعم إيطالية",
+    budget: "2",
+    mood: ["evening"],
+    description: "مثال تجريبي لوجبة إيطالية ضمن رحلة في أبها.",
+    bestTime: "المساء، بعد التأكد من ساعات العمل",
+    tags: "إيطالي بيتزا باستا مطعم"
+  },
+  {
+    name: "جولة بين المرتفعات",
+    area: "soudah",
+    areaName: "السودة",
+    type: "nature",
+    typeName: "طبيعة وإطلالات",
+    budget: "1",
+    mood: ["morning", "sunset"],
+    description: "مثال لمسار طبيعي مع وقت للتصوير والاستمتاع بالمناظر.",
+    bestTime: "الصباح أو قبل الغروب مع مراعاة الطقس",
+    tags: "جبال مشي طبيعة تصوير"
+  },
+  {
+    name: "جولة في قرية رجال ألمع التراثية",
+    area: "rijal",
+    areaName: "رجال ألمع",
+    type: "heritage",
+    typeName: "تراث وثقافة",
+    budget: "2",
+    mood: ["morning"],
+    description: "اقتراح تجريبي لاستكشاف العمارة والتراث المحلي.",
+    bestTime: "نهارًا، بعد التحقق من أوقات الزيارة",
+    tags: "تراث تاريخ قرية ثقافة"
+  },
+  {
+    name: "نزهة عائلية في الطبيعة",
+    area: "abha",
+    areaName: "أبها",
+    type: "family",
+    typeName: "أماكن عائلية",
+    budget: "1",
+    mood: ["morning", "sunset"],
+    description: "فكرة تجريبية لنشاط عائلي في الهواء الطلق.",
+    bestTime: "حسب الطقس والموقع المختار",
+    tags: "عائلة أطفال نزهة طبيعة"
+  }
+];
+
+const areaNames = {
+  abha: "أبها",
+  soudah: "السودة",
+  rijal: "رجال ألمع"
+};
+
+function addTextElement(parent, tag, text, className) {
+  const element = document.createElement(tag);
+  element.textContent = text;
+  if (className) element.className = className;
+  parent.appendChild(element);
+  return element;
+}
+
+document.getElementById("searchTravel").addEventListener("click", () => {
+  const query = document.getElementById("travelSearch").value
+    .trim()
+    .toLowerCase();
+
+  const area = document.getElementById("travelArea").value;
+  const type = document.getElementById("travelType").value;
+  const budget = document.getElementById("travelBudget").value;
+  const mood = document.getElementById("travelMood").value;
+  const results = document.getElementById("travelResults");
+
+  results.replaceChildren();
+
+  const matches = demoExperiences.filter(place => {
+    const searchableText = [
+      place.name,
+      place.areaName,
+      place.typeName,
+      place.description,
+      place.tags
+    ].join(" ").toLowerCase();
+
+    const words = query.split(/\s+/).filter(Boolean);
+    const matchesQuery = words.every(word => searchableText.includes(word));
+    const matchesArea = area === "all" || place.area === area;
+    const matchesType = type === "all" || place.type === type;
+    const matchesBudget = budget === "all" || place.budget === budget;
+    const matchesMood = mood === "all" || place.mood.includes(mood);
+
+    return matchesQuery && matchesArea &&
+      matchesType && matchesBudget && matchesMood;
+  });
+
+  if (matches.length === 0) {
+    addTextElement(
+      results, "p",
+      "ما لقينا نتيجة ضمن الأمثلة التجريبية. جرّبي تغيير خيارات البحث."
+    );
+    return;
+  }
+
+  matches.forEach(place => {
+    const card = document.createElement("article");
+    card.className = "travel-result";
+
+    addTextElement(card, "h3", place.name);
+    addTextElement(card, "p", place.description);
+    addTextElement(card, "p", "أفضل وقت مقترح: " + place.bestTime);
+
+    const meta = document.createElement("div");
+    meta.className = "result-meta";
+
+    addTextElement(meta, "span", place.areaName);
+    addTextElement(meta, "span", place.typeName);
+    addTextElement(meta, "span", "مثال تجريبي");
+    card.appendChild(meta);
+
+    results.appendChild(card);
+  });
+});
+
+const samplePlans = {
+  abha: {
+    mixed: [
+      ["9:00 ص", "بداية اليوم", "إفطار واستكشاف وسط أبها."],
+      ["11:00 ص", "محطة ثقافية", "زيارة وجهة ثقافية بعد التحقق من مواعيدها."],
+      ["4:30 م", "وقت الطبيعة", "اختيار إطلالة مناسبة للتصوير."],
+      ["7:00 م", "ختام الرحلة", "عشاء في مكان تختارينه."]
+    ],
+    nature: [
+      ["9:00 ص", "انطلاقة هادئة", "إفطار ثم الاستعداد لجولة طبيعية."],
+      ["11:00 ص", "استكشاف المناظر", "اختيار موقع طبيعي مناسب للطقس."],
+      ["4:30 م", "جلسة إطلالة", "وقت للراحة والتصوير."]
+    ],
+    heritage: [
+      ["9:00 ص", "بداية ثقافية", "التعرف على تاريخ أبها."],
+      ["11:00 ص", "استكشاف التراث", "زيارة معلم ثقافي بعد التحقق من فتحه."],
+      ["4:00 م", "جولة ختامية", "استكشاف الأسواق أو المواقع التراثية المتاحة."]
+    ],
+    family: [
+      ["9:00 ص", "بداية عائلية", "إفطار وتجهيز احتياجات الأسرة."],
+      ["11:00 ص", "نشاط عائلي", "اختيار وجهة مناسبة لجميع أفراد الأسرة."],
+      ["4:30 م", "وقت مفتوح", "نزهة خفيفة وفق الطقس."]
+    ]
+  },
+  soudah: {
+    mixed: [
+      ["9:00 ص", "هواء الجبال", "بدء اليوم بجولة طبيعية مناسبة للطقس."],
+      ["11:00 ص", "استراحة شاي", "اختيار مقهى متاح بعد التأكد من ساعات عمله."],
+      ["4:30 م", "مشهد الغروب", "اختيار نقطة مشاهدة آمنة ومتاحة."]
+    ],
+    nature: [
+      ["8:30 ص", "بداية المسار", "جولة في الطبيعة حسب حالة الطقس."],
+      ["11:00 ص", "استراحة", "مشروب دافئ ووقت للراحة."],
+      ["4:30 م", "وقت التصوير", "إطلالة جبلية مناسبة إن كانت الظروف آمنة."]
+    ],
+    heritage: [
+      ["9:00 ص", "اكتشاف المنطقة", "التعرف على ثقافة عسير."],
+      ["11:00 ص", "تجربة محلية", "اختيار نشاط ثقافي متاح."],
+      ["4:00 م", "ختام هادئ", "استراحة قبل العودة."]
+    ],
+    family: [
+      ["9:00 ص", "انطلاق الأسرة", "التأكد من الطقس وتجهيز الاحتياجات."],
+      ["11:00 ص", "نزهة مناسبة", "اختيار مكان متاح وآمن للعائلة."],
+      ["4:00 م", "استراحة", "وقت للراحة قبل العودة."]
+    ]
+  },
+  rijal: {
+    mixed: [
+      ["9:00 ص", "بداية الرحلة", "الانطلاق بعد التأكد من أوقات الوجهات."],
+      ["11:00 ص", "اكتشاف التراث", "جولة في قرية رجال ألمع إذا كانت الزيارة متاحة."],
+      ["2:00 م", "استراحة", "اختيار مكان مناسب لتناول الطعام."],
+      ["4:00 م", "ختام ثقافي", "وقت للتصوير والتعرف على العمارة المحلية."]
+    ],
+    nature: [
+      ["9:00 ص", "استكشاف الطبيعة", "اختيار مسار مناسب للظروف الجوية."],
+      ["11:00 ص", "استراحة", "وقت للراحة والتصوير."],
+      ["3:30 م", "جولة خفيفة", "استكشاف موقع متاح قبل العودة."]
+    ],
+    heritage: [
+      ["9:00 ص", "بداية تراثية", "التعرف على تاريخ المنطقة."],
+      ["11:00 ص", "جولة ثقافية", "زيارة معلم تراثي بعد التحقق من مواعيده."],
+      ["2:00 م", "استراحة محلية", "وقت لتناول الطعام."],
+      ["3:30 م", "العمارة والحكايات", "استكشاف التفاصيل التراثية."]
+    ],
+    family: [
+      ["9:00 ص", "بداية عائلية", "التجهيز والانطلاق."],
+      ["11:00 ص", "اكتشاف التراث", "زيارة مناسبة للأسرة إذا كانت متاحة."],
+      ["2:00 م", "وقت الراحة", "وجبة واستراحة قبل العودة."]
+    ]
+  }
+};
+
+let currentPlanText = "";
+
+document.getElementById("buildPlan").addEventListener("click", () => {
+  const area = document.getElementById("planArea").value;
+  const style = document.getElementById("planStyle").value;
+  const results = document.getElementById("planResults");
+
+  results.replaceChildren();
+
+  const plan = samplePlans[area][style];
+
+  currentPlanText = "خطة يوم في " + areaNames[area] + "\n\n";
+
+  plan.forEach(([time, title, description]) => {
+    const stop = document.createElement("article");
+    stop.className = "plan-stop";
+
+    addTextElement(stop, "div", time, "plan-time");
+
+    const details = document.createElement("div");
+    addTextElement(details, "h3", title);
+    addTextElement(details, "p", description);
+    stop.appendChild(details);
+
+    results.appendChild(stop);
+    currentPlanText += time + " — " + title + "\n" +
+      description + "\n\n";
+  });
+
+  document.getElementById("copyStatus").textContent =
+    "تم إعداد جدول تجريبي. راجعي ساعات العمل والمسافات قبل الرحلة.";
+});
+
+document.getElementById("copyPlan").addEventListener("click", async () => {
+  const status = document.getElementById("copyStatus");
+
+  if (!currentPlanText) {
+    status.textContent = "أنشئي جدول الرحلة أولًا.";
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(currentPlanText);
+    status.textContent = "تم نسخ جدول الرحلة.";
+  } catch {
+    status.textContent =
+      "تعذر النسخ التلقائي. حددي الجدول وانسخيه يدويًا.";
+  }
+});
+
 </script>
 
 </body>
