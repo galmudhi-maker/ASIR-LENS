@@ -1,95 +1,224 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عدسة عسير | ASIR LENS</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عدسة عسير | ASIR LENS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="navbar">
-<a class="logo" href="#home">عدسة عسير</a>
-<nav>
-<a href="#home">الرئيسية</a>
-<a href="#discover">اكتشفي عسير</a>
-<a href="#idea">عن المشروع</a>
-</nav>
-<a class="nav-button" href="#discover">ابدئي الرحلة ←</a>
+  <a class="logo" href="#home">عدسة عسير</a>
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#lens">العدسة الذكية</a>
+    <a href="#past">عبر الزمن</a>
+    <a href="#nearby">اكتشفي عسير</a>
+  </nav>
+  <a class="nav-button" href="#lens">ابدئي الرحلة ←</a>
 </header>
 
 <section class="hero" id="home">
-<div class="hero-content">
-<span class="tag">اكتشفي عسير بطريقة مختلفة</span>
-<h1>وراء كل مكان<br>حكاية تستحق الاكتشاف</h1>
-<p>رحلة ذكية بين جبال أبها الخضراء، وعبق الماضي، وجمال الحاضر.</p>
-<a class="main-button" href="#discover">اكتشفي الوجهات السياحية ↗</a>
-</div>
-<div class="hero-label">ASIR, SAUDI ARABIA <span>✦</span></div>
+  <div class="hero-content">
+    <span class="tag">ASIR LENS · السياحة الذكية</span>
+    <h1>كل معلم له حكاية<br>اكتشفيها بعدستك</h1>
+    <p>اكتشفي معالم عسير، وتعرّفي على تاريخها، واستكشفي جمال الماضي والحاضر في تجربة سياحية تفاعلية.</p>
+    <a class="main-button" href="#lens">جرّبي العدسة الذكية ↗</a>
+  </div>
+  <div class="hero-label">ASIR, SAUDI ARABIA ✦</div>
 </section>
 
-<section class="intro" id="idea">
-<span class="eyebrow">ASIR LENS EXPERIENCE</span>
-<h2>عسير بعينٍ جديدة</h2>
-<p>ليست مجرد رحلة سياحية، بل تجربة تربط المكان بذاكرته، وتمنحك فرصة اكتشاف كيف كان بالأمس وكيف أصبح اليوم.</p>
+<section class="intro">
+  <span class="eyebrow">اكتشاف يتجاوز الصورة</span>
+  <h2>مو بس تشوفين المكان، تعرفين حكايته</h2>
+  <p>عدسة عسير فكرة لمنصة سياحية تساعد الزوار على التعرف على المعالم، واستكشاف التراث، والتخطيط لرحلاتهم في منطقة عسير.</p>
 </section>
 
-<section class="destinations" id="discover">
-<div class="section-heading">
-<div>
-<span class="eyebrow">اكتشفي • استكشفي • عيشي التجربة</span>
-<h2>وجهات تأسر القلب</h2>
-</div>
-<span class="small-note">جمال الطبيعة والتراث في مكان واحد</span>
-</div>
+<section class="tool-section" id="lens">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">SMART LENS</span>
+      <h2>عدستك لاكتشاف المعالم</h2>
+    </div>
+  </div>
 
-<div class="cards">
-<article class="place-card">
-<img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="جبال شاهقة">
-<div class="card-info">
-<span class="place-type">الطبيعة والمرتفعات</span>
-<h3>جبال أبها</h3>
-<p>اكتشفي سحر المرتفعات والمناظر التي تعانق السحاب.</p>
-<a href="#idea">اكتشفي الفكرة ←</a>
-</div>
-</article>
+  <div class="upload-panel">
+    <div class="upload-content">
+      <span class="lens-symbol">⌕</span>
+      <h3>وش المعلم اللي قدامك؟</h3>
+      <p>اختاري صورة لمعْلم من عسير أو التقطي صورة بكاميرا جهازك.</p>
 
-<article class="place-card">
-<img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=900&q=85" alt="عمارة ومبانٍ تراثية">
-<div class="card-info">
-<span class="place-type">التراث والثقافة</span>
-<h3>حكايات الماضي</h3>
-<p>تعرّفي على العمارة القديمة والقصص التي تحملها الأماكن.</p>
-<a href="#idea">اكتشفي الفكرة ←</a>
-</div>
-</article>
+      <label class="main-button upload-button" for="placeImage">
+        📷 اختاري صورة المعلم
+      </label>
+      <input id="placeImage" type="file" accept="image/*" capture="environment" hidden>
 
-<article class="place-card">
-<img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="منظر طبيعي بين الجبال">
-<div class="card-info">
-<span class="place-type">الاستكشاف والتجربة</span>
-<h3>رحلة عبر الزمن</h3>
-<p>تخيّلي كيف تتغير الأماكن بين الماضي والحاضر.</p>
-<a href="#idea">اكتشفي الفكرة ←</a>
-</div>
-</article>
-</div>
+      <p class="small-note">تُعرض الصورة هنا للمعاينة قبل تحليلها.</p>
+    </div>
+
+    <div class="preview-area">
+      <img id="imagePreview" alt="معاينة صورة المعلم" hidden>
+      <div id="emptyPreview">
+        <span>✧</span>
+        <p>ستظهر صورتك هنا</p>
+      </div>
+    </div>
+
+    <div class="analysis-area">
+      <button class="main-button" id="analyzeButton" disabled>
+        التعرّف على المعلم بالذكاء الاصطناعي
+      </button>
+      <p id="analysisStatus" role="status" aria-live="polite">
+        اختاري صورة أولًا. التعرّف الحقيقي يحتاج ربط خدمة ذكاء اصطناعي.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="smart-banner">
-<div>
-<span class="eyebrow">THE FUTURE OF TOURISM</span>
-<h2>ماذا لو استطعتِ رؤية الماضي في المكان نفسه؟</h2>
-<p>هنا تأتي فكرة عدسة عسير: توظيف التقنية والذكاء الاصطناعي لتقديم تجربة سياحية تفاعلية.</p>
-</div>
-<span class="lens-icon">✧</span>
+<section class="tool-section" id="past">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">THEN & NOW</span>
+      <h2>عبر الزمن</h2>
+    </div>
+  </div>
+
+  <div class="history-panel">
+    <div>
+      <h3>الماضي</h3>
+      <div class="history-placeholder">الصورة التاريخية</div>
+      <p>تُضاف هنا صورة تاريخية موثقة للمعلم عند توفرها.</p>
+    </div>
+    <div>
+      <h3>الحاضر</h3>
+      <div class="history-placeholder current">المعلم اليوم</div>
+      <p>تُضاف هنا صورة حديثة للمعلم نفسه للمقارنة.</p>
+    </div>
+    <p class="full-note">
+      هذه مساحة مخصصة للمقارنة بين الماضي والحاضر.
+      الصور التاريخية والتصورات الرقمية ستُضاف بعد توفير مصادرها.
+    </p>
+  </div>
+</section>
+
+<section class="tool-section" id="nearby">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">EXPLORE AROUND YOU</span>
+      <h2>اكتشفي ما حولك</h2>
+    </div>
+  </div>
+
+  <div class="nearby-panel">
+    <h3>رحلتك القادمة تبدأ من هنا</h3>
+    <p>اختاري منطقة في عسير لاستكشاف الوجهات المقترحة.</p>
+    <label for="region">المنطقة</label>
+    <select id="region">
+      <option value="abha">أبها</option>
+      <option value="rijal">رجال ألمع</option>
+      <option value="soudah">السودة</option>
+    </select>
+    <button class="main-button" id="exploreButton">عرض الوجهات المقترحة</button>
+    <div id="nearbyResults" aria-live="polite"></div>
+    <p class="small-note">
+      هذه اقتراحات أولية وليست نتائج مبنية على موقعك الحالي.
+      التوصيات القريبة الفعلية تحتاج ربط خدمة مواقع وبيانات سياحية.
+    </p>
+  </div>
+</section>
+
+<section class="smart-banner" id="idea">
+  <div>
+    <span class="eyebrow">OUR VISION</span>
+    <h2>نربط جمال عسير بذاكرتها</h2>
+    <p>هدف عدسة عسير هو الجمع بين الذكاء الاصطناعي والسياحة والتراث، لتصبح زيارة المعلم بداية حكاية واكتشاف.</p>
+  </div>
+  <span class="lens-icon">✧</span>
 </section>
 
 <footer>
-<a class="logo" href="#home">عدسة عسير</a>
-<p>نرى المكان، نكتشف حكايته، ونعيش تفاصيله.</p>
-<span>ASIR LENS © 2026</span>
+  <a class="logo" href="#home">عدسة عسير</a>
+  <p>نرى المكان، نكتشف حكايته، ونعيش تفاصيله.</p>
+  <span>ASIR LENS © 2026</span>
 </footer>
+
+<script>
+const imageInput = document.getElementById("placeImage");
+const imagePreview = document.getElementById("imagePreview");
+const emptyPreview = document.getElementById("emptyPreview");
+const analyzeButton = document.getElementById("analyzeButton");
+const analysisStatus = document.getElementById("analysisStatus");
+
+let previewUrl = null;
+
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files[0];
+
+  if (previewUrl) {
+    URL.revokeObjectURL(previewUrl);
+    previewUrl = null;
+  }
+
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    analysisStatus.textContent = "اختاري ملف صورة صالحًا.";
+    imageInput.value = "";
+    return;
+  }
+
+  previewUrl = URL.createObjectURL(file);
+  imagePreview.src = previewUrl;
+  imagePreview.hidden = false;
+  emptyPreview.hidden = true;
+  analyzeButton.disabled = false;
+
+  analysisStatus.textContent =
+    "تم اختيار الصورة. المعاينة جاهزة؛ لم يتم التعرف على المعلم بعد.";
+});
+
+analyzeButton.addEventListener("click", () => {
+  analysisStatus.textContent =
+    "خدمة التعرف بالذكاء الاصطناعي لم تُربط بعد. الخطوة التالية هي توصيل خدمة تحليل الصور حتى تظهر نتيجة حقيقية.";
+});
+
+const destinations = {
+  abha: [
+    ["قرية المفتاحة", "وجهة فنية وثقافية في أبها"],
+    ["قصر شدا", "معلم تراثي في مدينة أبها"]
+  ],
+  rijal: [
+    ["قرية رجال ألمع", "قرية تراثية تشتهر بعمارتها الحجرية"],
+    ["متحف رجال ألمع", "وجهة للتعرف على تراث المنطقة"]
+  ],
+  soudah: [
+    ["السودة", "منطقة جبلية ذات طبيعة مرتفعة"],
+    ["مرتفعات عسير", "مناظر طبيعية وتجارب في الهواء الطلق"]
+  ]
+};
+
+document.getElementById("exploreButton").addEventListener("click", () => {
+  const region = document.getElementById("region").value;
+  const results = document.getElementById("nearbyResults");
+  results.replaceChildren();
+
+  destinations[region].forEach(([name, description]) => {
+    const card = document.createElement("article");
+    card.className = "suggestion-card";
+
+    const title = document.createElement("h4");
+    title.textContent = name;
+
+    const detail = document.createElement("p");
+    detail.textContent = description;
+
+    card.append(title, detail);
+    results.append(card);
+  });
+});
+</script>
 
 </body>
 </html>
