@@ -129,6 +129,144 @@
   </div>
 </section>
 
+<section class="tool-section" id="companion">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">YOUR SMART TRAVEL COMPANION</span>
+      <h2>رفيق عسير الذكي ✨</h2>
+      <p>قولي لنا وش تحبين، ونساعدك تكتشفين تجربة تناسبك.</p>
+    </div>
+  </div>
+
+  <div class="companion-panel">
+    <label for="travelSearch">وش ودك تجربين؟</label>
+    <input id="travelSearch" type="search"
+      placeholder="مثال: شاي بإطلالة في السودة، مطعم إيطالي في أبها">
+
+    <div class="filter-grid">
+      <div>
+        <label for="travelArea">المنطقة</label>
+        <select id="travelArea">
+          <option value="all">كل عسير</option>
+          <option value="abha">أبها</option>
+          <option value="soudah">السودة</option>
+          <option value="rijal">رجال ألمع</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="travelType">نوع التجربة</label>
+        <select id="travelType">
+          <option value="all">كل التجارب</option>
+          <option value="tea">شاي ومقاهٍ</option>
+          <option value="italian">مطاعم إيطالية</option>
+          <option value="nature">طبيعة وإطلالات</option>
+          <option value="heritage">تراث وثقافة</option>
+          <option value="family">أماكن عائلية</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="travelBudget">الميزانية للفرد</label>
+        <select id="travelBudget">
+          <option value="all">كل الميزانيات</option>
+          <option value="1">اقتصادية</option>
+          <option value="2">متوسطة</option>
+          <option value="3">مرتفعة</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="travelMood">أجواء الرحلة</label>
+        <select id="travelMood">
+          <option value="all">أي أجواء</option>
+          <option value="morning">صباحية</option>
+          <option value="sunset">وقت الغروب</option>
+          <option value="evening">مسائية</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="main-button" id="searchTravel">
+      اكتشفي الخيارات المناسبة ←
+    </button>
+
+    <p class="small-note">
+      النموذج الحالي تجريبي؛ النتائج لا تمثل دليلًا محدثًا للأماكن
+      أو إثباتًا لتوفرها أو أسعارها.
+    </p>
+
+    <div id="travelResults" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="tool-section" id="dayPlanner">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">YOUR DAY, YOUR WAY</span>
+      <h2>خطّطي يومك في عسير 🗓️</h2>
+      <p>رتّبي تجربتك من أول محطة إلى آخر لحظة.</p>
+    </div>
+  </div>
+
+  <div class="planner-panel">
+    <div class="filter-grid">
+      <div>
+        <label for="planArea">وجهة الرحلة</label>
+        <select id="planArea">
+          <option value="abha">أبها</option>
+          <option value="soudah">السودة</option>
+          <option value="rijal">رجال ألمع</option>
+        </select>
+      </div>
+      <div>
+        <label for="planStyle">نوع اليوم</label>
+        <select id="planStyle">
+          <option value="mixed">يوم متنوع</option>
+          <option value="nature">طبيعة واسترخاء</option>
+          <option value="heritage">تراث وثقافة</option>
+          <option value="family">يوم عائلي</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="main-button" id="buildPlan">
+      رتّبي لي يومي ✨
+    </button>
+
+    <p class="small-note">
+      هذا جدول مقترح للتجربة، وليس جدولًا مبنيًا على أوقات فتح مؤكدة
+      أو توقعات طقس مباشرة.
+    </p>
+
+    <div id="planResults" aria-live="polite"></div>
+    <button class="secondary-button" id="copyPlan">
+      نسخ جدول الرحلة
+    </button>
+    <p id="copyStatus" role="status"></p>
+  </div>
+</section>
+
+<section class="tool-section" id="freshPlaces">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">WHAT'S NEW IN ASIR</span>
+      <h2>وش الجديد في عسير؟ ✨</h2>
+      <p>مساحة لاكتشاف الافتتاحات والتجارب الجديدة.</p>
+    </div>
+  </div>
+
+  <div class="fresh-panel">
+    <div class="fresh-icon">✦</div>
+    <h3>اكتشفي الوجهات الجديدة أولًا بأول</h3>
+    <p>
+      سيعرض هذا القسم الأماكن الجديدة بعد التحقق من تاريخ افتتاحها
+      وربط المنصة بمصدر بيانات محدث.
+    </p>
+    <span class="demo-badge">بانتظار ربط مصدر البيانات</span>
+  </div>
+</section>
+
 <section class="smart-banner" id="idea">
   <div>
     <span class="eyebrow">OUR VISION</span>
