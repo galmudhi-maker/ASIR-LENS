@@ -106,15 +106,22 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
 
       const city = el("city").value;
-      const type = el("place-type").value;
+const type = el("place-type").value;
+const visitTime = el("visit-time").value;
 
-      const list = ASIR_PLACES.filter(place => {
-        const cityMatch = city === "الكل" || place.city === city;
-        const typeMatch = type === "الكل" ||
-          normalize(place.type).includes(normalize(type));
+const list = ASIR_PLACES.filter(place => {
+  const cityMatch = city === "الكل" || place.city === city;
+  const typeMatch = type === "الكل" ||
+    normalize(place.type).includes(normalize(type));
 
-        return cityMatch && typeMatch;
-      });
+  const visitMatch =
+    visitTime === "أي وقت" ||
+    (visitTime === "صباح" && /طبيعة|جبال|ممشى|بحيرة/.test(place.type + place.name)) ||
+    (visitTime === "عصر" && /تراث|ثقافة|تسوق|طبيعة/.test(place.type)) ||
+    (visitTime === "مساء" && /تسوق|مقاهٍ|ثقافة|فعاليات/.test(place.type));
+
+  return cityMatch && typeMatch && visitMatch;
+});
 
       showPlaces(list);
 
