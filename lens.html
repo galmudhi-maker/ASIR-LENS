@@ -1,4 +1,50 @@
-<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>العدسة الذكية | عدسة عسير</title><link rel="stylesheet" href="style.css"></head><body>
-<header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">◈</span><span>عدسة عسير<small>ASIR LENS</small></span></a><button class="menu-toggle" aria-label="فتح القائمة" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button><nav class="nav-links"><a href="index.html">الرئيسية</a><a href="discover.html">اكتشف عسير</a><a class="active" href="lens.html">العدسة الذكية</a><a href="time.html">عبر الزمن</a><a href="planner.html">خطط يومك</a></nav></header>
-<section class="page-hero"><p class="eyebrow">02 / صورة تحكي</p><h1>عدستك الذكية</h1><p>ارفع صورة لمعلم أو مكان تريد معرفة المزيد عنه. تحميل الصورة يعمل محليًا في المتصفح، أما التعرف التلقائي فيحتاج إلى ربط خدمة ذكاء اصطناعي.</p></section>
-<main class="content-wrap"><section class="panel"><h2>حمّل صورة</h2><div class="file-drop"><p>اختر صورة من جهازك لعرضها هنا</p><input id="image-input" type="file" accept="image/*"><img id="image-preview" class="preview-image" alt="معاينة الصورة المرفوعة" hidden><p id="image-status" class="status">لم يتم اختيار صورة بعد.</p></div><div class="notice">ميزة التعرّف على المعالم غير مفعّلة في هذه النسخة. لا ترفع صورًا خاصة أو حساسة.</div></section><a class="back-link" href="index.html">← العودة للرئيسية</a></main><footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">◈</span><span>عدسة عسير<small>ASIR LENS</small></span></a><p>التعرّف الآلي يحتاج تكاملًا خارجيًا.</p></footer><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>العدسة الذكية | عدسة عسير</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">◈</span>
+    <span>عدسة عسير<small>ASIR LENS</small></span>
+  </a>
+  <button class="menu-toggle" aria-label="فتح القائمة"
+    onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+  <nav class="nav-links">
+    <a href="index.html">الرئيسية</a>
+    <a href="discover.html">اكتشف عسير</a>
+    <a class="active" href="lens.html">العدسة الذكية</a>
+    <a href="time.html">عبر الزمن</a>
+    <a href="planner.html">خطط يومك</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <p class="eyebrow">02 / صورة تحكي</p>
+  <h1>عدستك الذكية</h1>
+  <p>ارفع صورة لمعلم أو مكان في عسير لمعرفة المزيد عنه باستخدام الذكاء الاصطناعي.</p>
+</section>
+
+<main class="content-wrap">
+  <section class="panel">
+    <h2>حمّل صورة</h2>
+    <div class="file-drop">
+      <p>اختر صورة من جهازك لعرضها وتحليلها</p>
+      <input id="image-input" type="file" accept="image/*">
+      <img id="image-preview" class="preview-image"
+        alt="معاينة الصورة المرفوعة" hidden>
+      <p id="image-status" class="status">لم يتم اختيار صورة بعد.</p>
+      <button id="analyze-image" type="button">حلّل الصورة بالذكاء الاصطناعي</button>
+      <div id="ai-result" class="status" aria-live="polite"></div>
+    </div>
+    <div class="notice">لا ترفع صورًا خاصة أو حساسة.</div>
+  </section>
+  <a class="back-link" href="index.html">← العودة للرئيسية</a>
+</main>
+
+<footer class="site-footer">
+  <a class="brand
