@@ -2,213 +2,647 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>عدسة عسير | اكتشف حكاية المكان</title>
-<style>
-:root{--green:#234b3b;--gold:#c5a66a;--cream:#f8f6ef;--ink:#25352c}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.9}
-header{background:var(--green);color:white;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.logo{font-size:23px;font-weight:bold}
-nav{display:flex;gap:18px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none}
-.hero{padding:65px 20px;text-align:center;color:white;background:linear-gradient(135deg,#234b3b,#567b5b)}
-.hero .tag{color:#f0d6a1}
-.hero h1{font-size:clamp(30px,5vw,48px);margin:8px 0}
-.hero p{max-width:650px;margin:10px auto 25px}
-.btn{display:inline-block;background:var(--gold);color:#172e22;padding:10px 22px;border-radius:9px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
-main{max-width:1100px;margin:auto;padding:35px 18px}
-.section-title{text-align:center;margin-bottom:8px;color:var(--green);font-size:29px}
-.subtitle{text-align:center;margin:0 auto 25px;max-width:700px}
-.search{width:100%;padding:14px;border:1px solid #d5d7ce;border-radius:10px;font-size:16px;background:white;margin-bottom:16px}
-.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:25px}
-.filters button{padding:8px 17px;border:1px solid var(--green);border-radius:25px;background:white;color:var(--green);cursor:pointer}
-.filters button.active,.filters button:hover{background:var(--green);color:white}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:white;border:1px solid #e7e4d9;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px #203c2a0c}
-.card-top{height:90px;background:linear-gradient(135deg,#d8e1d1,#b8cbb7);display:flex;align-items:center;justify-content:center;font-size:42px}
-.card-content{padding:17px}
-.card h3{color:var(--green);margin:0 0 5px}
-.category{font-size:12px;color:#687969}
-.card p{margin:8px 0}
-.card .more{color:var(--green);font-weight:bold;text-decoration:none}
-.empty{text-align:center;display:none;padding:20px}
-.history{background:#e9eee5;border-radius:18px;padding:25px;margin-top:45px}
-.timeline{border-right:3px solid var(--gold);padding-right:22px;margin:25px 8px}
-.event{position:relative;margin:0 0 25px}
-.event:before{content:"";position:absolute;right:-30px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--green)}
-.event h3{margin:0;color:var(--green)}
-.note{font-size:13px;color:#5c665d}
-footer{text-align:center;padding:25px;background:var(--green);color:white;margin-top:40px}
-@media(max-width:600px){header{justify-content:center}nav{justify-content:center;gap:12px}.hero{padding:45px 18px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>عدسة عسير | ASIR LENS</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="logo">🌿 عدسة عسير</div>
+
+<header class="navbar">
+  <a class="logo" href="#home">عدسة عسير</a>
   <nav>
     <a href="#home">الرئيسية</a>
-    <a href="#places">اكتشف عسير</a>
-    <a href="#history">عبر الزمن</a>
+    <a href="#lens">العدسة الذكية</a>
+    <a href="#past">عبر الزمن</a>
+    <a href="#nearby">اكتشفي عسير</a>
   </nav>
+  <a class="nav-button" href="#lens">ابدئي الرحلة ←</a>
 </header>
 
 <section class="hero" id="home">
-  <div class="tag">أرض الجمال والتراث</div>
-  <h1>عسير.. حكاية تستحق الاكتشاف</h1>
-  <p>من الجبال الخضراء إلى القرى التراثية، اكتشف أماكن عسير وحكاياتها في تجربة بسيطة تجمع الطبيعة والثقافة والتاريخ.</p>
-  <a class="btn" href="#places">ابدئي الاستكشاف</a>
+  <div class="hero-content">
+    <span class="tag">ASIR LENS · السياحة الذكية</span>
+    <h1>كل معلم له حكاية<br>اكتشفيها بعدستك</h1>
+    <p>اكتشفي معالم عسير، وتعرّفي على تاريخها، واستكشفي جمال الماضي والحاضر في تجربة سياحية تفاعلية.</p>
+    <a class="main-button" href="#lens">جرّبي العدسة الذكية ↗</a>
+  </div>
+  <div class="hero-label">ASIR, SAUDI ARABIA ✦</div>
 </section>
 
-<main>
-  <section id="places">
-    <h2 class="section-title">اكتشف معالم عسير</h2>
-    <p class="subtitle">ابحثي عن وجهتك أو اختاري تصنيفًا لتكتشفي أماكن جديدة.</p>
+<section class="intro">
+  <span class="eyebrow">اكتشاف يتجاوز الصورة</span>
+  <h2>مو بس تشوفين المكان، تعرفين حكايته</h2>
+  <p>عدسة عسير فكرة لمنصة سياحية تساعد الزوار على التعرف على المعالم، واستكشاف التراث، والتخطيط لرحلاتهم في منطقة عسير.</p>
+</section>
 
-    <input id="search" class="search" type="search" placeholder="اكتبي اسم المكان..." aria-label="ابحثي عن مكان">
+<section class="tool-section" id="lens">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">SMART LENS</span>
+      <h2>عدستك لاكتشاف المعالم</h2>
+    </div>
+  </div>
 
-    <div class="filters">
-      <button class="active" data-filter="all">كل الأماكن</button>
-      <button data-filter="nature">الطبيعة</button>
-      <button data-filter="heritage">التراث</button>
-      <button data-filter="culture">الثقافة</button>
+  <div class="upload-panel">
+    <div class="upload-content">
+      <span class="lens-symbol">⌕</span>
+      <h3>وش المعلم اللي قدامك؟</h3>
+      <p>اختاري صورة لمعْلم من عسير أو التقطي صورة بكاميرا جهازك.</p>
+
+      <label class="main-button upload-button" for="placeImage">
+        📷 اختاري صورة المعلم
+      </label>
+      <input id="placeImage" type="file" accept="image/*" capture="environment" hidden>
+
+      <p class="small-note">تُعرض الصورة هنا للمعاينة قبل تحليلها.</p>
     </div>
 
-    <div class="grid" id="placesGrid">
-      <article class="card" data-category="nature">
-        <div class="card-top">⛰️</div><div class="card-content">
-        <span class="category">الطبيعة</span><h3>السودة</h3>
-        <p>مرتفعات جبلية وإطلالات طبيعية من أشهر معالم منطقة عسير.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=السودة+عسير">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="heritage">
-        <div class="card-top">🏘️</div><div class="card-content">
-        <span class="category">التراث</span><h3>رجال ألمع</h3>
-        <p>قرية تراثية تشتهر بمبانيها الحجرية وألوانها وتاريخها العريق.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=قرية+رجال+ألمع">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="culture">
-        <div class="card-top">🎨</div><div class="card-content">
-        <span class="category">الثقافة</span><h3>شارع الفن</h3>
-        <p>وجهة في أبها تحتفي بالفنون والإبداع والأجواء الثقافية.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=شارع+الفن+أبها">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="nature">
-        <div class="card-top">🌲</div><div class="card-content">
-        <span class="category">الطبيعة</span><h3>منتزه عسير الوطني</h3>
-        <p>مساحات طبيعية تجمع الغطاء النباتي والجبال والمناظر الخلابة.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=منتزه+عسير+الوطني">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="nature">
-        <div class="card-top">🌄</div><div class="card-content">
-        <span class="category">الطبيعة</span><h3>الحبلة</h3>
-        <p>منطقة جبلية تتميز بتضاريسها وإطلالاتها الفريدة.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=الحبلة+عسير">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="culture">
-        <div class="card-top">🖼️</div><div class="card-content">
-        <span class="category">الثقافة</span><h3>قرية المفتاحة</h3>
-        <p>مساحة ثقافية وفنية في أبها تحتضن الفنون والإبداع المحلي.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=قرية+المفتاحة+أبها">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="nature">
-        <div class="card-top">💧</div><div class="card-content">
-        <span class="category">الطبيعة</span><h3>شلال الدهناء</h3>
-        <p>معلم طبيعي في تنومة، ويُفضّل التحقق من حالة الشلال قبل الزيارة.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=شلال+الدهناء+تنومة">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="heritage">
-        <div class="card-top">🏛️</div><div class="card-content">
-        <span class="category">التراث</span><h3>قصر شدا</h3>
-        <p>معلم تاريخي في أبها يعكس جانبًا من التراث العمراني للمنطقة.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=قصر+شدا+أبها">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-
-      <article class="card" data-category="culture">
-        <div class="card-top">🛍️</div><div class="card-content">
-        <span class="category">الثقافة</span><h3>سوق الثلاثاء</h3>
-        <p>سوق شعبي يرتبط بالمنتجات المحلية وأجواء الأسواق التقليدية.</p>
-        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=سوق+الثلاثاء+أبها">استكشفي الموقع ↗</a>
-        </div>
-      </article>
-    </div>
-    <p class="empty" id="empty">ما لقينا مكانًا مطابقًا للبحث.</p>
-  </section>
-
-  <section class="history" id="history">
-    <h2 class="section-title">عبر الزمن</h2>
-    <p class="subtitle">رحلة مختصرة للتعرّف على ملامح من تاريخ عسير وتراثها.</p>
-    <div class="timeline">
-      <div class="event">
-        <h3>الحياة التقليدية</h3>
-        <p>ارتبطت حياة سكان عسير بالزراعة والقرى الجبلية والتعاون المجتمعي.</p>
-      </div>
-      <div class="event">
-        <h3>العمارة التراثية</h3>
-        <p>تميّزت قرى المنطقة بالمباني الحجرية والطينية والزخارف والألوان المحلية.</p>
-      </div>
-      <div class="event">
-        <h3>الحرف والأسواق</h3>
-        <p>حافظت الأسواق الشعبية والحرف اليدوية على جوانب من الهوية الثقافية للمنطقة.</p>
-      </div>
-      <div class="event">
-        <h3>عسير اليوم</h3>
-        <p>تجمع المنطقة اليوم بين المحافظة على التراث وتطوير الوجهات السياحية والثقافية.</p>
+    <div class="preview-area">
+      <img id="imagePreview" alt="معاينة صورة المعلم" hidden>
+      <div id="emptyPreview">
+        <span>✧</span>
+        <p>ستظهر صورتك هنا</p>
       </div>
     </div>
-    <p class="note">هذه لمحة تعريفية عامة وليست تسلسلًا زمنيًا موثقًا بالأعوام.</p>
-  </section>
-</main>
+
+    <div class="analysis-area">
+      <button class="main-button" id="analyzeButton" disabled>
+        التعرّف على المعلم بالذكاء الاصطناعي
+      </button>
+      <p id="analysisStatus" role="status" aria-live="polite">
+        اختاري صورة أولًا. التعرّف الحقيقي يحتاج ربط خدمة ذكاء اصطناعي.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="tool-section" id="past">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">THEN & NOW</span>
+      <h2>عبر الزمن</h2>
+    </div>
+  </div>
+
+  <div class="history-panel">
+    <div>
+      <h3>الماضي</h3>
+      <div class="history-placeholder">الصورة التاريخية</div>
+      <p>تُضاف هنا صورة تاريخية موثقة للمعلم عند توفرها.</p>
+    </div>
+    <div>
+      <h3>الحاضر</h3>
+      <div class="history-placeholder current">المعلم اليوم</div>
+      <p>تُضاف هنا صورة حديثة للمعلم نفسه للمقارنة.</p>
+    </div>
+    <p class="full-note">
+      هذه مساحة مخصصة للمقارنة بين الماضي والحاضر.
+      الصور التاريخية والتصورات الرقمية ستُضاف بعد توفير مصادرها.
+    </p>
+  </div>
+</section>
+
+<section class="tool-section" id="nearby">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">EXPLORE AROUND YOU</span>
+      <h2>اكتشفي ما حولك</h2>
+    </div>
+  </div>
+
+  <div class="nearby-panel">
+    <h3>رحلتك القادمة تبدأ من هنا</h3>
+    <p>اختاري منطقة في عسير لاستكشاف الوجهات المقترحة.</p>
+    <label for="region">المنطقة</label>
+    <select id="region">
+      <option value="abha">أبها</option>
+      <option value="rijal">رجال ألمع</option>
+      <option value="soudah">السودة</option>
+    </select>
+    <button class="main-button" id="exploreButton">عرض الوجهات المقترحة</button>
+    <div id="nearbyResults" aria-live="polite"></div>
+    <p class="small-note">
+      هذه اقتراحات أولية وليست نتائج مبنية على موقعك الحالي.
+      التوصيات القريبة الفعلية تحتاج ربط خدمة مواقع وبيانات سياحية.
+    </p>
+  </div>
+</section>
+
+<section class="tool-section" id="companion">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">YOUR SMART TRAVEL COMPANION</span>
+      <h2>رفيق عسير الذكي ✨</h2>
+      <p>قولي لنا وش تحبين، ونساعدك تكتشفين تجربة تناسبك.</p>
+    </div>
+  </div>
+
+  <div class="companion-panel">
+    <label for="travelSearch">وش ودك تجربين؟</label>
+    <input id="travelSearch" type="search"
+      placeholder="مثال: شاي بإطلالة في السودة، مطعم إيطالي في أبها">
+
+    <div class="filter-grid">
+      <div>
+        <label for="travelArea">المنطقة</label>
+        <select id="travelArea">
+          <option value="all">كل عسير</option>
+          <option value="abha">أبها</option>
+          <option value="soudah">السودة</option>
+          <option value="rijal">رجال ألمع</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="travelType">نوع التجربة</label>
+        <select id="travelType">
+          <option value="all">كل التجارب</option>
+          <option value="tea">شاي ومقاهٍ</option>
+          <option value="italian">مطاعم إيطالية</option>
+          <option value="nature">طبيعة وإطلالات</option>
+          <option value="heritage">تراث وثقافة</option>
+          <option value="family">أماكن عائلية</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="travelBudget">الميزانية للفرد</label>
+        <select id="travelBudget">
+          <option value="all">كل الميزانيات</option>
+          <option value="1">اقتصادية</option>
+          <option value="2">متوسطة</option>
+          <option value="3">مرتفعة</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="travelMood">أجواء الرحلة</label>
+        <select id="travelMood">
+          <option value="all">أي أجواء</option>
+          <option value="morning">صباحية</option>
+          <option value="sunset">وقت الغروب</option>
+          <option value="evening">مسائية</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="main-button" id="searchTravel">
+      اكتشفي الخيارات المناسبة ←
+    </button>
+
+    <p class="small-note">
+      النموذج الحالي تجريبي؛ النتائج لا تمثل دليلًا محدثًا للأماكن
+      أو إثباتًا لتوفرها أو أسعارها.
+    </p>
+
+    <div id="travelResults" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="tool-section" id="dayPlanner">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">YOUR DAY, YOUR WAY</span>
+      <h2>خطّطي يومك في عسير 🗓️</h2>
+      <p>رتّبي تجربتك من أول محطة إلى آخر لحظة.</p>
+    </div>
+  </div>
+
+  <div class="planner-panel">
+    <div class="filter-grid">
+      <div>
+        <label for="planArea">وجهة الرحلة</label>
+        <select id="planArea">
+          <option value="abha">أبها</option>
+          <option value="soudah">السودة</option>
+          <option value="rijal">رجال ألمع</option>
+        </select>
+      </div>
+      <div>
+        <label for="planStyle">نوع اليوم</label>
+        <select id="planStyle">
+          <option value="mixed">يوم متنوع</option>
+          <option value="nature">طبيعة واسترخاء</option>
+          <option value="heritage">تراث وثقافة</option>
+          <option value="family">يوم عائلي</option>
+        </select>
+      </div>
+    </div>
+
+    <button class="main-button" id="buildPlan">
+      رتّبي لي يومي ✨
+    </button>
+
+    <p class="small-note">
+      هذا جدول مقترح للتجربة، وليس جدولًا مبنيًا على أوقات فتح مؤكدة
+      أو توقعات طقس مباشرة.
+    </p>
+
+    <div id="planResults" aria-live="polite"></div>
+    <button class="secondary-button" id="copyPlan">
+      نسخ جدول الرحلة
+    </button>
+    <p id="copyStatus" role="status"></p>
+  </div>
+</section>
+
+<section class="tool-section" id="freshPlaces">
+  <div class="section-heading">
+    <div>
+      <span class="eyebrow">WHAT'S NEW IN ASIR</span>
+      <h2>وش الجديد في عسير؟ ✨</h2>
+      <p>مساحة لاكتشاف الافتتاحات والتجارب الجديدة.</p>
+    </div>
+  </div>
+
+  <div class="fresh-panel">
+    <div class="fresh-icon">✦</div>
+    <h3>اكتشفي الوجهات الجديدة أولًا بأول</h3>
+    <p>
+      سيعرض هذا القسم الأماكن الجديدة بعد التحقق من تاريخ افتتاحها
+      وربط المنصة بمصدر بيانات محدث.
+    </p>
+    <span class="demo-badge">بانتظار ربط مصدر البيانات</span>
+  </div>
+</section>
+
+<section class="smart-banner" id="idea">
+  <div>
+    <span class="eyebrow">OUR VISION</span>
+    <h2>نربط جمال عسير بذاكرتها</h2>
+    <p>هدف عدسة عسير هو الجمع بين الذكاء الاصطناعي والسياحة والتراث، لتصبح زيارة المعلم بداية حكاية واكتشاف.</p>
+  </div>
+  <span class="lens-icon">✧</span>
+</section>
 
 <footer>
-  <strong>عدسة عسير</strong>
-  <p>اكتشف المكان.. وتعرّف على حكايته 🌿</p>
+  <a class="logo" href="#home">عدسة عسير</a>
+  <p>نرى المكان، نكتشف حكايته، ونعيش تفاصيله.</p>
+  <span>ASIR LENS © 2026</span>
 </footer>
 
 <script>
-const search = document.getElementById("search");
-const cards = Array.from(document.querySelectorAll(".card"));
-const buttons = Array.from(document.querySelectorAll("[data-filter]"));
-const empty = document.getElementById("empty");
-let category = "all";
+const imageInput = document.getElementById("placeImage");
+const imagePreview = document.getElementById("imagePreview");
+const emptyPreview = document.getElementById("emptyPreview");
+const analyzeButton = document.getElementById("analyzeButton");
+const analysisStatus = document.getElementById("analysisStatus");
 
-function updatePlaces() {
-  const term = search.value.trim().toLocaleLowerCase("ar");
-  let count = 0;
-  cards.forEach(card => {
-    const matchesName = card.innerText.toLocaleLowerCase("ar").includes(term);
-    const matchesCategory = category === "all" || card.dataset.category === category;
-    const visible = matchesName && matchesCategory;
-    card.hidden = !visible;
-    if (visible) count++;
-  });
-  empty.style.display = count ? "none" : "block";
-}
-buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    category = button.dataset.filter;
-    buttons.forEach(item => item.classList.toggle("active", item === button));
-    updatePlaces();
+let previewUrl = null;
+
+imageInput.addEventListener("change", () => {
+  const file = imageInput.files[0];
+
+  if (previewUrl) {
+    URL.revokeObjectURL(previewUrl);
+    previewUrl = null;
+  }
+
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    analysisStatus.textContent = "اختاري ملف صورة صالحًا.";
+    imageInput.value = "";
+    return;
+  }
+
+  previewUrl = URL.createObjectURL(file);
+  imagePreview.src = previewUrl;
+  imagePreview.hidden = false;
+  emptyPreview.hidden = true;
+  analyzeButton.disabled = false;
+
+  analysisStatus.textContent =
+    "تم اختيار الصورة. المعاينة جاهزة؛ لم يتم التعرف على المعلم بعد.";
+});
+
+analyzeButton.addEventListener("click", () => {
+  analysisStatus.textContent =
+    "خدمة التعرف بالذكاء الاصطناعي لم تُربط بعد. الخطوة التالية هي توصيل خدمة تحليل الصور حتى تظهر نتيجة حقيقية.";
+});
+
+const destinations = {
+  abha: [
+    ["قرية المفتاحة", "وجهة فنية وثقافية في أبها"],
+    ["قصر شدا", "معلم تراثي في مدينة أبها"]
+  ],
+  rijal: [
+    ["قرية رجال ألمع", "قرية تراثية تشتهر بعمارتها الحجرية"],
+    ["متحف رجال ألمع", "وجهة للتعرف على تراث المنطقة"]
+  ],
+  soudah: [
+    ["السودة", "منطقة جبلية ذات طبيعة مرتفعة"],
+    ["مرتفعات عسير", "مناظر طبيعية وتجارب في الهواء الطلق"]
+  ]
+};
+
+document.getElementById("exploreButton").addEventListener("click", () => {
+  const region = document.getElementById("region").value;
+  const results = document.getElementById("nearbyResults");
+  results.replaceChildren();
+
+  destinations[region].forEach(([name, description]) => {
+    const card = document.createElement("article");
+    card.className = "suggestion-card";
+
+    const title = document.createElement("h4");
+    title.textContent = name;
+
+    const detail = document.createElement("p");
+    detail.textContent = description;
+
+    card.append(title, detail);
+    results.append(card);
   });
 });
-search.addEventListener("input", updatePlaces);
+  
+const demoExperiences = [
+  {
+    name: "تجربة شاي بإطلالة جبلية",
+    area: "soudah",
+    areaName: "السودة",
+    type: "tea",
+    typeName: "شاي ومقاهٍ",
+    budget: "1",
+    mood: ["morning", "sunset"],
+    description: "مثال تجريبي لتجربة شاي مع إطلالة على الجبال.",
+    bestTime: "الصباح أو الغروب حسب الطقس وساعات المكان",
+    tags: "شاي إطلالة جبال طبيعة"
+  },
+  {
+    name: "تجربة مطعم إيطالي",
+    area: "abha",
+    areaName: "أبها",
+    type: "italian",
+    typeName: "مطاعم إيطالية",
+    budget: "2",
+    mood: ["evening"],
+    description: "مثال تجريبي لوجبة إيطالية ضمن رحلة في أبها.",
+    bestTime: "المساء، بعد التأكد من ساعات العمل",
+    tags: "إيطالي بيتزا باستا مطعم"
+  },
+  {
+    name: "جولة بين المرتفعات",
+    area: "soudah",
+    areaName: "السودة",
+    type: "nature",
+    typeName: "طبيعة وإطلالات",
+    budget: "1",
+    mood: ["morning", "sunset"],
+    description: "مثال لمسار طبيعي مع وقت للتصوير والاستمتاع بالمناظر.",
+    bestTime: "الصباح أو قبل الغروب مع مراعاة الطقس",
+    tags: "جبال مشي طبيعة تصوير"
+  },
+  {
+    name: "جولة في قرية رجال ألمع التراثية",
+    area: "rijal",
+    areaName: "رجال ألمع",
+    type: "heritage",
+    typeName: "تراث وثقافة",
+    budget: "2",
+    mood: ["morning"],
+    description: "اقتراح تجريبي لاستكشاف العمارة والتراث المحلي.",
+    bestTime: "نهارًا، بعد التحقق من أوقات الزيارة",
+    tags: "تراث تاريخ قرية ثقافة"
+  },
+  {
+    name: "نزهة عائلية في الطبيعة",
+    area: "abha",
+    areaName: "أبها",
+    type: "family",
+    typeName: "أماكن عائلية",
+    budget: "1",
+    mood: ["morning", "sunset"],
+    description: "فكرة تجريبية لنشاط عائلي في الهواء الطلق.",
+    bestTime: "حسب الطقس والموقع المختار",
+    tags: "عائلة أطفال نزهة طبيعة"
+  }
+];
+
+const areaNames = {
+  abha: "أبها",
+  soudah: "السودة",
+  rijal: "رجال ألمع"
+};
+
+function addTextElement(parent, tag, text, className) {
+  const element = document.createElement(tag);
+  element.textContent = text;
+  if (className) element.className = className;
+  parent.appendChild(element);
+  return element;
+}
+
+document.getElementById("searchTravel").addEventListener("click", () => {
+  const query = document.getElementById("travelSearch").value
+    .trim()
+    .toLowerCase();
+
+  const area = document.getElementById("travelArea").value;
+  const type = document.getElementById("travelType").value;
+  const budget = document.getElementById("travelBudget").value;
+  const mood = document.getElementById("travelMood").value;
+  const results = document.getElementById("travelResults");
+
+  results.replaceChildren();
+
+  const matches = demoExperiences.filter(place => {
+    const searchableText = [
+      place.name,
+      place.areaName,
+      place.typeName,
+      place.description,
+      place.tags
+    ].join(" ").toLowerCase();
+
+    const words = query.split(/\s+/).filter(Boolean);
+    const matchesQuery = words.every(word => searchableText.includes(word));
+    const matchesArea = area === "all" || place.area === area;
+    const matchesType = type === "all" || place.type === type;
+    const matchesBudget = budget === "all" || place.budget === budget;
+    const matchesMood = mood === "all" || place.mood.includes(mood);
+
+    return matchesQuery && matchesArea &&
+      matchesType && matchesBudget && matchesMood;
+  });
+
+  if (matches.length === 0) {
+    addTextElement(
+      results, "p",
+      "ما لقينا نتيجة ضمن الأمثلة التجريبية. جرّبي تغيير خيارات البحث."
+    );
+    return;
+  }
+
+  matches.forEach(place => {
+    const card = document.createElement("article");
+    card.className = "travel-result";
+
+    addTextElement(card, "h3", place.name);
+    addTextElement(card, "p", place.description);
+    addTextElement(card, "p", "أفضل وقت مقترح: " + place.bestTime);
+
+    const meta = document.createElement("div");
+    meta.className = "result-meta";
+
+    addTextElement(meta, "span", place.areaName);
+    addTextElement(meta, "span", place.typeName);
+    addTextElement(meta, "span", "مثال تجريبي");
+    card.appendChild(meta);
+
+    results.appendChild(card);
+  });
+});
+
+const samplePlans = {
+  abha: {
+    mixed: [
+      ["9:00 ص", "بداية اليوم", "إفطار واستكشاف وسط أبها."],
+      ["11:00 ص", "محطة ثقافية", "زيارة وجهة ثقافية بعد التحقق من مواعيدها."],
+      ["4:30 م", "وقت الطبيعة", "اختيار إطلالة مناسبة للتصوير."],
+      ["7:00 م", "ختام الرحلة", "عشاء في مكان تختارينه."]
+    ],
+    nature: [
+      ["9:00 ص", "انطلاقة هادئة", "إفطار ثم الاستعداد لجولة طبيعية."],
+      ["11:00 ص", "استكشاف المناظر", "اختيار موقع طبيعي مناسب للطقس."],
+      ["4:30 م", "جلسة إطلالة", "وقت للراحة والتصوير."]
+    ],
+    heritage: [
+      ["9:00 ص", "بداية ثقافية", "التعرف على تاريخ أبها."],
+      ["11:00 ص", "استكشاف التراث", "زيارة معلم ثقافي بعد التحقق من فتحه."],
+      ["4:00 م", "جولة ختامية", "استكشاف الأسواق أو المواقع التراثية المتاحة."]
+    ],
+    family: [
+      ["9:00 ص", "بداية عائلية", "إفطار وتجهيز احتياجات الأسرة."],
+      ["11:00 ص", "نشاط عائلي", "اختيار وجهة مناسبة لجميع أفراد الأسرة."],
+      ["4:30 م", "وقت مفتوح", "نزهة خفيفة وفق الطقس."]
+    ]
+  },
+  soudah: {
+    mixed: [
+      ["9:00 ص", "هواء الجبال", "بدء اليوم بجولة طبيعية مناسبة للطقس."],
+      ["11:00 ص", "استراحة شاي", "اختيار مقهى متاح بعد التأكد من ساعات عمله."],
+      ["4:30 م", "مشهد الغروب", "اختيار نقطة مشاهدة آمنة ومتاحة."]
+    ],
+    nature: [
+      ["8:30 ص", "بداية المسار", "جولة في الطبيعة حسب حالة الطقس."],
+      ["11:00 ص", "استراحة", "مشروب دافئ ووقت للراحة."],
+      ["4:30 م", "وقت التصوير", "إطلالة جبلية مناسبة إن كانت الظروف آمنة."]
+    ],
+    heritage: [
+      ["9:00 ص", "اكتشاف المنطقة", "التعرف على ثقافة عسير."],
+      ["11:00 ص", "تجربة محلية", "اختيار نشاط ثقافي متاح."],
+      ["4:00 م", "ختام هادئ", "استراحة قبل العودة."]
+    ],
+    family: [
+      ["9:00 ص", "انطلاق الأسرة", "التأكد من الطقس وتجهيز الاحتياجات."],
+      ["11:00 ص", "نزهة مناسبة", "اختيار مكان متاح وآمن للعائلة."],
+      ["4:00 م", "استراحة", "وقت للراحة قبل العودة."]
+    ]
+  },
+  rijal: {
+    mixed: [
+      ["9:00 ص", "بداية الرحلة", "الانطلاق بعد التأكد من أوقات الوجهات."],
+      ["11:00 ص", "اكتشاف التراث", "جولة في قرية رجال ألمع إذا كانت الزيارة متاحة."],
+      ["2:00 م", "استراحة", "اختيار مكان مناسب لتناول الطعام."],
+      ["4:00 م", "ختام ثقافي", "وقت للتصوير والتعرف على العمارة المحلية."]
+    ],
+    nature: [
+      ["9:00 ص", "استكشاف الطبيعة", "اختيار مسار مناسب للظروف الجوية."],
+      ["11:00 ص", "استراحة", "وقت للراحة والتصوير."],
+      ["3:30 م", "جولة خفيفة", "استكشاف موقع متاح قبل العودة."]
+    ],
+    heritage: [
+      ["9:00 ص", "بداية تراثية", "التعرف على تاريخ المنطقة."],
+      ["11:00 ص", "جولة ثقافية", "زيارة معلم تراثي بعد التحقق من مواعيده."],
+      ["2:00 م", "استراحة محلية", "وقت لتناول الطعام."],
+      ["3:30 م", "العمارة والحكايات", "استكشاف التفاصيل التراثية."]
+    ],
+    family: [
+      ["9:00 ص", "بداية عائلية", "التجهيز والانطلاق."],
+      ["11:00 ص", "اكتشاف التراث", "زيارة مناسبة للأسرة إذا كانت متاحة."],
+      ["2:00 م", "وقت الراحة", "وجبة واستراحة قبل العودة."]
+    ]
+  }
+};
+
+let currentPlanText = "";
+
+document.getElementById("buildPlan").addEventListener("click", () => {
+  const area = document.getElementById("planArea").value;
+  const style = document.getElementById("planStyle").value;
+  const results = document.getElementById("planResults");
+
+  results.replaceChildren();
+
+  const plan = samplePlans[area][style];
+
+  currentPlanText = "خطة يوم في " + areaNames[area] + "\n\n";
+
+  plan.forEach(([time, title, description]) => {
+    const stop = document.createElement("article");
+    stop.className = "plan-stop";
+
+    addTextElement(stop, "div", time, "plan-time");
+
+    const details = document.createElement("div");
+    addTextElement(details, "h3", title);
+    addTextElement(details, "p", description);
+    stop.appendChild(details);
+
+    results.appendChild(stop);
+    currentPlanText += time + " — " + title + "\n" +
+      description + "\n\n";
+  });
+
+  document.getElementById("copyStatus").textContent =
+    "تم إعداد جدول تجريبي. راجعي ساعات العمل والمسافات قبل الرحلة.";
+});
+
+document.getElementById("copyPlan").addEventListener("click", async () => {
+  const status = document.getElementById("copyStatus");
+
+  if (!currentPlanText) {
+    status.textContent = "أنشئي جدول الرحلة أولًا.";
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(currentPlanText);
+    status.textContent = "تم نسخ جدول الرحلة.";
+  } catch {
+    status.textContent =
+      "تعذر النسخ التلقائي. حددي الجدول وانسخيه يدويًا.";
+  }
+});
+
+</script>
+<script>
+const ASIR_LENS_API = "https://lively-leaf-1907.galmudhi.workers.dev";
+</script>
+  <section id="asir-search" style="padding:30px;text-align:center">
+  <h2>اكتشفي عسير بذكاء 🌿</h2>
+  <p>وش ودك تكتشفين في عسير؟</p>
+  <input id="asir-query" placeholder="مثال: مقهى في السودة"
+    style="padding:12px;width:70%;max-width:400px">
+  <button onclick="searchAsir()" style="padding:12px">ابحثي</button>
+  <p id="asir-result"></p>
+</section>
+<script>
+async function searchAsir() {
+  const result = document.getElementById("asir-result");
+  result.textContent = "جاري الاتصال...";
+  try {
+    const response = await fetch(
+      "https://lively-leaf-1907.galmudhi.workers.dev"
+    );
+    const data = await response.json();
+    result.textContent = data.message;
+  } catch {
+    result.textContent = "تعذر الاتصال، حاولي مرة أخرى.";
+  }
+}
 </script>
 </body>
 </html>
