@@ -1,67 +1,214 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#24123d">
-  <title>عدسة عسير | ASIR LENS</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عدسة عسير | اكتشف حكاية المكان</title>
+<style>
+:root{--green:#234b3b;--gold:#c5a66a;--cream:#f8f6ef;--ink:#25352c}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.9}
+header{background:var(--green);color:white;padding:18px 6%;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:bold}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none}
+.hero{padding:65px 20px;text-align:center;color:white;background:linear-gradient(135deg,#234b3b,#567b5b)}
+.hero .tag{color:#f0d6a1}
+.hero h1{font-size:clamp(30px,5vw,48px);margin:8px 0}
+.hero p{max-width:650px;margin:10px auto 25px}
+.btn{display:inline-block;background:var(--gold);color:#172e22;padding:10px 22px;border-radius:9px;text-decoration:none;font-weight:bold;border:0;cursor:pointer}
+main{max-width:1100px;margin:auto;padding:35px 18px}
+.section-title{text-align:center;margin-bottom:8px;color:var(--green);font-size:29px}
+.subtitle{text-align:center;margin:0 auto 25px;max-width:700px}
+.search{width:100%;padding:14px;border:1px solid #d5d7ce;border-radius:10px;font-size:16px;background:white;margin-bottom:16px}
+.filters{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:25px}
+.filters button{padding:8px 17px;border:1px solid var(--green);border-radius:25px;background:white;color:var(--green);cursor:pointer}
+.filters button.active,.filters button:hover{background:var(--green);color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:white;border:1px solid #e7e4d9;border-radius:14px;overflow:hidden;box-shadow:0 4px 15px #203c2a0c}
+.card-top{height:90px;background:linear-gradient(135deg,#d8e1d1,#b8cbb7);display:flex;align-items:center;justify-content:center;font-size:42px}
+.card-content{padding:17px}
+.card h3{color:var(--green);margin:0 0 5px}
+.category{font-size:12px;color:#687969}
+.card p{margin:8px 0}
+.card .more{color:var(--green);font-weight:bold;text-decoration:none}
+.empty{text-align:center;display:none;padding:20px}
+.history{background:#e9eee5;border-radius:18px;padding:25px;margin-top:45px}
+.timeline{border-right:3px solid var(--gold);padding-right:22px;margin:25px 8px}
+.event{position:relative;margin:0 0 25px}
+.event:before{content:"";position:absolute;right:-30px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--green)}
+.event h3{margin:0;color:var(--green)}
+.note{font-size:13px;color:#5c665d}
+footer{text-align:center;padding:25px;background:var(--green);color:white;margin-top:40px}
+@media(max-width:600px){header{justify-content:center}nav{justify-content:center;gap:12px}.hero{padding:45px 18px}}
+</style>
 </head>
 <body>
-<header class="site-header">
-  <a class="brand" href="index.html"><span class="brand-mark">◈</span><span>عدسة عسير<small>ASIR LENS</small></span></a>
-  <button class="menu-toggle" aria-label="فتح القائمة" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-  <nav class="nav-links">
-    <a href="index.html" class="active">الرئيسية</a>
-    <a href="discover.html">اكتشف عسير</a>
-    <a href="lens.html">العدسة الذكية</a>
-    <a href="time.html">عبر الزمن</a>
-    <a href="planner.html">خطط يومك</a>
+<header>
+  <div class="logo">🌿 عدسة عسير</div>
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#places">اكتشف عسير</a>
+    <a href="#history">عبر الزمن</a>
   </nav>
 </header>
 
+<section class="hero" id="home">
+  <div class="tag">أرض الجمال والتراث</div>
+  <h1>عسير.. حكاية تستحق الاكتشاف</h1>
+  <p>من الجبال الخضراء إلى القرى التراثية، اكتشف أماكن عسير وحكاياتها في تجربة بسيطة تجمع الطبيعة والثقافة والتاريخ.</p>
+  <a class="btn" href="#places">ابدئي الاستكشاف</a>
+</section>
+
 <main>
-  <section class="hero">
-    <div class="hero-content">
-      <p class="eyebrow">اكتشف الجنوب بطريقة مختلفة</p>
-      <h1>عسير.. حكاية<br><span>تستحق الاكتشاف</span></h1>
-      <p class="hero-copy">رحلتك تبدأ من هنا؛ اكتشف الأماكن، تعرّف على الحكايات، وخطّط يومك في عسير من تجربة رقمية واحدة.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="discover.html">ابدأ الاستكشاف <span>←</span></a>
-        <a class="btn btn-ghost" href="#features">اكتشف المزايا</a>
+  <section id="places">
+    <h2 class="section-title">اكتشف معالم عسير</h2>
+    <p class="subtitle">ابحثي عن وجهتك أو اختاري تصنيفًا لتكتشفي أماكن جديدة.</p>
+
+    <input id="search" class="search" type="search" placeholder="اكتبي اسم المكان..." aria-label="ابحثي عن مكان">
+
+    <div class="filters">
+      <button class="active" data-filter="all">كل الأماكن</button>
+      <button data-filter="nature">الطبيعة</button>
+      <button data-filter="heritage">التراث</button>
+      <button data-filter="culture">الثقافة</button>
+    </div>
+
+    <div class="grid" id="placesGrid">
+      <article class="card" data-category="nature">
+        <div class="card-top">⛰️</div><div class="card-content">
+        <span class="category">الطبيعة</span><h3>السودة</h3>
+        <p>مرتفعات جبلية وإطلالات طبيعية من أشهر معالم منطقة عسير.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=السودة+عسير">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="heritage">
+        <div class="card-top">🏘️</div><div class="card-content">
+        <span class="category">التراث</span><h3>رجال ألمع</h3>
+        <p>قرية تراثية تشتهر بمبانيها الحجرية وألوانها وتاريخها العريق.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=قرية+رجال+ألمع">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="culture">
+        <div class="card-top">🎨</div><div class="card-content">
+        <span class="category">الثقافة</span><h3>شارع الفن</h3>
+        <p>وجهة في أبها تحتفي بالفنون والإبداع والأجواء الثقافية.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=شارع+الفن+أبها">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="nature">
+        <div class="card-top">🌲</div><div class="card-content">
+        <span class="category">الطبيعة</span><h3>منتزه عسير الوطني</h3>
+        <p>مساحات طبيعية تجمع الغطاء النباتي والجبال والمناظر الخلابة.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=منتزه+عسير+الوطني">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="nature">
+        <div class="card-top">🌄</div><div class="card-content">
+        <span class="category">الطبيعة</span><h3>الحبلة</h3>
+        <p>منطقة جبلية تتميز بتضاريسها وإطلالاتها الفريدة.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=الحبلة+عسير">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="culture">
+        <div class="card-top">🖼️</div><div class="card-content">
+        <span class="category">الثقافة</span><h3>قرية المفتاحة</h3>
+        <p>مساحة ثقافية وفنية في أبها تحتضن الفنون والإبداع المحلي.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=قرية+المفتاحة+أبها">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="nature">
+        <div class="card-top">💧</div><div class="card-content">
+        <span class="category">الطبيعة</span><h3>شلال الدهناء</h3>
+        <p>معلم طبيعي في تنومة، ويُفضّل التحقق من حالة الشلال قبل الزيارة.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=شلال+الدهناء+تنومة">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="heritage">
+        <div class="card-top">🏛️</div><div class="card-content">
+        <span class="category">التراث</span><h3>قصر شدا</h3>
+        <p>معلم تاريخي في أبها يعكس جانبًا من التراث العمراني للمنطقة.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=قصر+شدا+أبها">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+
+      <article class="card" data-category="culture">
+        <div class="card-top">🛍️</div><div class="card-content">
+        <span class="category">الثقافة</span><h3>سوق الثلاثاء</h3>
+        <p>سوق شعبي يرتبط بالمنتجات المحلية وأجواء الأسواق التقليدية.</p>
+        <a class="more" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=سوق+الثلاثاء+أبها">استكشفي الموقع ↗</a>
+        </div>
+      </article>
+    </div>
+    <p class="empty" id="empty">ما لقينا مكانًا مطابقًا للبحث.</p>
+  </section>
+
+  <section class="history" id="history">
+    <h2 class="section-title">عبر الزمن</h2>
+    <p class="subtitle">رحلة مختصرة للتعرّف على ملامح من تاريخ عسير وتراثها.</p>
+    <div class="timeline">
+      <div class="event">
+        <h3>الحياة التقليدية</h3>
+        <p>ارتبطت حياة سكان عسير بالزراعة والقرى الجبلية والتعاون المجتمعي.</p>
       </div>
-      <div class="hero-note"><span class="pulse"></span> بوابتك الرقمية لاستكشاف عسير</div>
+      <div class="event">
+        <h3>العمارة التراثية</h3>
+        <p>تميّزت قرى المنطقة بالمباني الحجرية والطينية والزخارف والألوان المحلية.</p>
+      </div>
+      <div class="event">
+        <h3>الحرف والأسواق</h3>
+        <p>حافظت الأسواق الشعبية والحرف اليدوية على جوانب من الهوية الثقافية للمنطقة.</p>
+      </div>
+      <div class="event">
+        <h3>عسير اليوم</h3>
+        <p>تجمع المنطقة اليوم بين المحافظة على التراث وتطوير الوجهات السياحية والثقافية.</p>
+      </div>
     </div>
-    <div class="hero-art" aria-label="رسم زخرفي مستوحى من جبال عسير">
-      <div class="sun"></div><div class="mountain mountain-back"></div><div class="mountain mountain-front"></div>
-      <div class="art-label"><span>18°</span><small>روح الجبال<br>وسحر الطبيعة</small></div>
-      <div class="art-orbit"></div>
-    </div>
-  </section>
-
-  <section class="intro section-wrap">
-    <div><p class="eyebrow">أكثر من مجرد دليل</p><h2>خلّ عسير<br>تتكشف لك</h2></div>
-    <p>من مرتفعات أبها إلى ضباب تنومة، ومن أجواء خميس مشيط إلى سواحل ومحافظات المنطقة؛ اجمع أفكار رحلتك في مكان واحد وبأسلوب بسيط وواضح.</p>
-  </section>
-
-  <section id="features" class="section-wrap">
-    <div class="section-heading"><div><p class="eyebrow">كل شيء في مكان واحد</p><h2>وش ودك تكتشف اليوم؟</h2></div><span class="section-number">01 / المزايا</span></div>
-    <div class="feature-grid">
-      <a class="feature-card feature-large" href="discover.html"><span class="feature-icon">⌖</span><span class="card-index">01</span><h3>اكتشف ما حولك</h3><p>اختَر المحافظة ونوع الأجواء، وخذ أفكارًا لأماكن تستحق الزيارة.</p><span class="card-link">ابدأ الاستكشاف ↗</span></a>
-      <a class="feature-card" href="lens.html"><span class="feature-icon">◎</span><span class="card-index">02</span><h3>عدستك الذكية</h3><p>جهّز صورة لمعلم تريد التعرّف عليه، مع توضيح حالة خدمة التعرّف.</p><span class="card-link">جرّب العدسة ↗</span></a>
-      <a class="feature-card" href="time.html"><span class="feature-icon">◷</span><span class="card-index">03</span><h3>عبر الزمن</h3><p>استكشف فكرة مقارنة صور الأماكن بين الماضي والحاضر.</p><span class="card-link">شاهد الفكرة ↗</span></a>
-      <a class="feature-card" href="guide.html"><span class="feature-icon">✳</span><span class="card-index">04</span><h3>رفيق عسير الذكي</h3><p>اكتب احتياجك واحصل على اقتراحات أولية تساعدك في التخطيط.</p><span class="card-link">اسأل الرفيق ↗</span></a>
-      <a class="feature-card" href="planner.html"><span class="feature-icon">▦</span><span class="card-index">05</span><h3>خطّط يومك</h3><p>رتّب محطات يومك، مدة الزيارة، ووقت التنقل التقديري.</p><span class="card-link">خطّط الآن ↗</span></a>
-      <a class="feature-card" href="news.html"><span class="feature-icon">✦</span><span class="card-index">06</span><h3>وش جديد عسير؟</h3><p>مساحة لآخر الأخبار والفعاليات عند ربط مصدر موثوق ومحدّث.</p><span class="card-link">استكشف الجديد ↗</span></a>
-    </div>
-  </section>
-
-  <section class="closing section-wrap">
-    <div><p class="eyebrow">رحلتك تبدأ بخطوة</p><h2>كل زاوية في عسير<br>لها قصة.</h2><p>اكتشفها بطريقتك، وخطط لتجربة تناسب وقتك واهتماماتك.</p></div>
-    <a class="btn btn-light" href="planner.html">خطّط رحلتك الآن ↗</a>
+    <p class="note">هذه لمحة تعريفية عامة وليست تسلسلًا زمنيًا موثقًا بالأعوام.</p>
   </section>
 </main>
-<footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">◈</span><span>عدسة عسير<small>ASIR LENS</small></span></a><p>تجربة رقمية للتعريف بجمال منطقة عسير.</p><span>© عدسة عسير</span></footer>
-<script src="script.js"></script>
+
+<footer>
+  <strong>عدسة عسير</strong>
+  <p>اكتشف المكان.. وتعرّف على حكايته 🌿</p>
+</footer>
+
+<script>
+const search = document.getElementById("search");
+const cards = Array.from(document.querySelectorAll(".card"));
+const buttons = Array.from(document.querySelectorAll("[data-filter]"));
+const empty = document.getElementById("empty");
+let category = "all";
+
+function updatePlaces() {
+  const term = search.value.trim().toLocaleLowerCase("ar");
+  let count = 0;
+  cards.forEach(card => {
+    const matchesName = card.innerText.toLocaleLowerCase("ar").includes(term);
+    const matchesCategory = category === "all" || card.dataset.category === category;
+    const visible = matchesName && matchesCategory;
+    card.hidden = !visible;
+    if (visible) count++;
+  });
+  empty.style.display = count ? "none" : "block";
+}
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    category = button.dataset.filter;
+    buttons.forEach(item => item.classList.toggle("active", item === button));
+    updatePlaces();
+  });
+});
+search.addEventListener("input", updatePlaces);
+</script>
 </body>
 </html>
