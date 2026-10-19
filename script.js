@@ -28,7 +28,7 @@ document.getElementById("analyze-image")?.addEventListener("click", async () => 
     });
 
     const response = await fetch(
-      "https://green-mouse-63ee.workers.dev",
+      "https://green-mouse-63ee.galmudhi.workers.dev
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
