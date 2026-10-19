@@ -1,4 +1,3 @@
-
 document.getElementById("analyze-image")?.addEventListener("click", async () => {
   const input = document.getElementById("image-input");
   const status = document.getElementById("image-status");
@@ -57,4 +56,32 @@ document.getElementById("analyze-image")?.addEventListener("click", async () => 
   } finally {
     button.disabled = false;
   }
+});
+
+document.getElementById("image-input")?.addEventListener("change", function () {
+  const file = this.files?.[0];
+  const preview = document.getElementById("image-preview");
+  const status = document.getElementById("image-status");
+
+  if (!file) return;
+
+  if (!file.type.startsWith("image/")) {
+    status.textContent = "اختاري ملف صورة صحيح.";
+    preview.hidden = true;
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function () {
+    preview.src = reader.result;
+    preview.hidden = false;
+    status.textContent = "تم تحميل الصورة بنجاح.";
+  };
+
+  reader.onerror = function () {
+    status.textContent = "تعذّر عرض الصورة. حاولي اختيار صورة أخرى.";
+  };
+
+  reader.readAsDataURL(file);
 });
